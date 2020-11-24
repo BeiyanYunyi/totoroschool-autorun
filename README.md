@@ -4,7 +4,7 @@
 
 ## 文件结构
 
-/source（已删除） ---- 通过 apktool、dex2jar 与 jd-gui 逆向工程得到的结果。需要者可以自取。
+/source（已删除） ---- 通过 apktool、dex2jar 与 jd-gui 逆向工程得到的结果。需要者可以自取。  
 /statistic.md ---- 通过httpcanary抓取到的统计数据原文。
 
 ## 工程日志 / 已知发现
