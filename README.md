@@ -19,11 +19,11 @@
 高德地图：用于地图数据。与高德地图服务器的通信用的是 SSL/TLS。  
 APP 更新服务器：用于检查 / 安装更新。与此服务器通信用的是 HTTP 明文。  
 运动数据服务器：用于提交每次运动数据。与此服务器的通信用的*应该*是 AES+RSA 双重加密。（这是我逆向工程 APP 得到的结果，分析可能不准确）  
-蒲公英：用于用户数据统计。提交的统计信息相当全面且恶心。
+蒲公英：用于用户数据统计。提交的统计信息相当全面且恶心。与此服务器通信用的是 HTTP 明文。
 
 ---
 
-当你第一次以及此后每次打开龙猫校园，还没有进行任何操作时，龙猫校园就会向[蒲公英的后端](http://www.pgyer.com/apiv1/sdkstat/launch)以http明文发送你的统计数据。统计数据原文参见[](https://github.com/lixiang810/tororoschool/blob/main/statistic.md)  
+当你第一次以及此后每次打开龙猫校园，还没有进行任何操作时，龙猫校园就会向[蒲公英的后端](http://www.pgyer.com/apiv1/sdkstat/launch)以http明文发送你的统计数据。统计数据原文参见[statistic.md](https://github.com/lixiang810/tororoschool/blob/main/statistic.md)  
 简单分析一下便可发现，龙猫校园向蒲公英以明文发送了如下统计信息：
 
 * 手机总空间与剩余空间
