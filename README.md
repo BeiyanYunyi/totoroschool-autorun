@@ -9,7 +9,7 @@
 
 ## 工程日志 / 已知发现
 
-龙猫校园会访问以下 4 类服务器：
+龙猫校园会访问以下 5 种服务器：
 
 1. 高德地图 API。
 2. [龙猫校园 APP 更新后端](http://news.xtotoro.com:50001/school/filter/version?type=1)。
