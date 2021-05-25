@@ -43,9 +43,9 @@ User-Agent: okhttp/3.12.0
 
 ```jsonc
 {
-   "schoolID": "*",
-   "schoolName": "******",
-   "snCode": "*******",
+   "schoolID": "*", // 经脱敏
+   "schoolName": "******", // 经脱敏
+   "snCode": "*******", // 经脱敏
    "login_url": "77",
    "bindflag": "Y",
    "code": "0000"
@@ -67,8 +67,8 @@ User-Agent: okhttp/3.12.0
 
 ```jsonc
 {
-  "schoolName": "*",
-  "snCode": "********"
+  "schoolName": "*", // 经脱敏
+  "snCode": "********" // 经脱敏
 }
 ```
 
@@ -81,18 +81,18 @@ User-Agent: okhttp/3.12.0
 {
    "Studentlist": [
      {
-       "snCode": "********",
-       "stuName": "***",
-       "sex": "*",
-       "className": "******",
-       "phoneNumber": "***********",
-       "curclass": "*********",
+       "snCode": "********", // 经脱敏
+       "stuName": "***", // 经脱敏
+       "sex": "*", // 经脱敏
+       "className": "******", // 经脱敏
+       "phoneNumber": "***********", // 经脱敏
+       "curclass": "*********", // 经脱敏
        "birthdate": null,
        "cardid": "",
        "indate": "2020-09",
-       "collegesName": "*******",
-       "campusid": "**",
-       "campusName": "***",
+       "collegesName": "*******", // 经脱敏
+       "campusid": "**", // 经脱敏
+       "campusName": "***", // 经脱敏
        "photoflag": "N"
      }
    ],
