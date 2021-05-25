@@ -12,12 +12,12 @@ Connection: Keep-Alive
 Accept-Encoding: gzip
 User-Agent: okhttp/3.12.0
 ```
-请求与响应的报文均是一段密文，加密方法为 `AES-ECB`，padding为 `ISO10126`，内容使用 `UTF-8` 编码， 密文为 `base64` 编码，密钥为 `www.xto*oro.com/`。  
+请求与响应的报文均是一段密文，加密方法为 `AES-ECB`，padding为 `ISO10126`，内容使用 `UTF-8` 编码， 密文为 `base64` 编码，密钥为 `www.xtotoro.com/`。  
 解密后的报文是一个经 stringify 的 JSON 对象，对其使用 `JSON.parse()`(JavaScript，其它语言请自行探索) 方法后即为本文档各示例使用的格式。
 
 ### allnewlogin
 此接口的作用是使用用户的微信信息进行登录。  
-#### 请求：
+#### 请求
 ```jsonc
 {
    "Mac": "12:34:56:F0:ED:CE",
@@ -31,7 +31,7 @@ User-Agent: okhttp/3.12.0
 `loginid` —— 用户微信的 openID。据微信开发者文档，对每个`应用开发者 ID` 而言， openID 与用户微信账号存在唯一对应关系。  
 `password` —— 用户密码。在使用微信登录的情况下，该值恒为空。  
 
-#### 响应：
+#### 响应
 ```jsonc
 {
    "schoolID": "*",
@@ -52,7 +52,7 @@ User-Agent: okhttp/3.12.0
 ### GetStudentInfo
 此接口的作用是获取学生的个人信息。
 
-#### 请求：
+#### 请求
 ```jsonc
 {
   "schoolName": "*",
