@@ -30,6 +30,7 @@ User-Agent: okhttp/3.12.0
 `login_way` —— 未知，目前该值恒定为 5。  
 `loginid` —— 用户微信的 openID。据微信开发者文档，对每个`应用开发者 ID` 而言， openID 与用户微信账号存在唯一对应关系。  
 `password` —— 用户密码。在使用微信登录的情况下，该值恒为空。  
+
 #### 响应：
 ```jsonc
 {
@@ -46,4 +47,55 @@ User-Agent: okhttp/3.12.0
 `snCode` —— 学号。  
 `login_url` —— 未知。  
 `bindflag` —— 推测为"用户是否已绑定微信"。在龙猫校园强制使用微信登录的当下，该值恒为 `"Y"`。  
-`code` —— 响应状态。对于本请求，已知`0000`表示成功。  
+`code` —— 响应状态码。对于本请求，已知`0000`表示成功。  
+
+### GetStudentInfo
+此接口的作用是获取学生的个人信息。
+
+#### 请求：
+```jsonc
+{
+  "schoolName": "*",
+  "snCode": "********"
+}
+```
+`schoolName` —— 同 `allnewlogin` 响应中 `schoolID` 一项。（吐槽一下龙猫开发者为啥不把键名统一一下）  
+`snCode` —— 同 `allnewlogin` 响应中 `snCode` 一项。  
+
+#### 响应
+```jsonc
+{
+   "Studentlist": [
+     {
+       "snCode": "********",
+       "stuName": "***",
+       "sex": "*",
+       "className": "******",
+       "phoneNumber": "***********",
+       "curclass": "*********",
+       "birthdate": null,
+       "cardid": "",
+       "indate": "2020-09",
+       "collegesName": "*******",
+       "campusid": "**",
+       "campusName": "***",
+       "photoflag": "N"
+     }
+   ],
+   "code": "8000"
+ }
+```
+`snCode` —— 同 `allnewlogin` 中 `snCode` 一项。  
+`stuName` —— 学生的名字，人类可读。  
+`sex` —— 学生的身份证性别，绝大多数情况下是生理性别，大多数情况下是心理性别，人类可读。  
+`className` —— 学生所在班级的名字，人类可读。  
+`phoneNumber` —— 学生的手机号，人类可读。  
+`curclass` —— 课程归属，人类可读。  
+`birthdate` —— 生日。  
+`cardid` —— 未知。对本文作者所属学校，该值恒为空。  
+`indate` —— 学生入学年月。  
+`collegesName` —— 学院名，人类可读。  
+`campusid` —— 未知，值与 `allnewlogin` 响应中 `schoolID` 一项不同。  
+`campusName` —— 学校名，人类可读，值与 `allnewlogin` 响应中 `schoolName` 一项可以不同。  
+`photoflag` —— 未知。是"有/无照片"？是"需要/不需要照片"？还请自行摸索。  
+`code` —— 响应状态码。对本请求，已知 `0800` 表示成功。
