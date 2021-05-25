@@ -12,7 +12,7 @@ Connection: Keep-Alive
 Accept-Encoding: gzip
 User-Agent: okhttp/3.12.0
 ```
-`POST` 报文是一段密文，加密方法为 `AES-ECB`，padding为 `ISO10126`，内容使用 `UTF-8` 编码， 密文为 `base64` 编码。  
+`POST` 报文是一段密文，加密方法为 `AES-ECB`，padding为 `ISO10126`，内容使用 `UTF-8` 编码， 密文为 `base64` 编码，密钥为 `www.xto*oro.com/`。  
 解密后的报文是一个经 stringify 的 JSON 对象，对其使用 `JSON.parse()`(JavaScript，其它语言请自行探索) 方法后即为本文档各示例使用的格式。
 
 ### allnewlogin
