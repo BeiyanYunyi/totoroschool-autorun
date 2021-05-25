@@ -12,12 +12,12 @@ Connection: Keep-Alive
 Accept-Encoding: gzip
 User-Agent: okhttp/3.12.0
 ```
-`POST` 报文是一段密文，加密方法为 `AES-ECB`，padding为 `ISO10126`，内容使用 `UTF-8` 编码， 密文为 `base64` 编码，密钥为 `www.xto*oro.com/`。  
+请求与响应的报文均是一段密文，加密方法为 `AES-ECB`，padding为 `ISO10126`，内容使用 `UTF-8` 编码， 密文为 `base64` 编码，密钥为 `www.xto*oro.com/`。  
 解密后的报文是一个经 stringify 的 JSON 对象，对其使用 `JSON.parse()`(JavaScript，其它语言请自行探索) 方法后即为本文档各示例使用的格式。
 
 ### allnewlogin
 此接口的作用是使用用户的微信信息进行登录。  
-解密后报文示意如下：
+#### 请求：
 ```jsonc
 {
    "Mac": "12:34:56:F0:ED:CE",
@@ -30,3 +30,20 @@ User-Agent: okhttp/3.12.0
 `login_way` —— 未知，目前该值恒定为 5。  
 `loginid` —— 用户微信的 openID。据微信开发者文档，对每个`应用开发者 ID` 而言， openID 与用户微信账号存在唯一对应关系。  
 `password` —— 用户密码。在使用微信登录的情况下，该值恒为空。  
+#### 响应：
+```jsonc
+{
+   "schoolID": "*",
+   "schoolName": "******",
+   "snCode": "*******",
+   "login_url": "77",
+   "bindflag": "Y",
+   "code": "0000"
+ }
+```
+`schoolID` —— 学校的ID，与使用龙猫校园的各学校存在对应关系。  
+`schoolName` —— 学校名，为人类可直接阅读的汉字。  
+`snCode` —— 学号。  
+`login_url` —— 未知。  
+`bindflag` —— 推测为"用户是否已绑定微信"。在龙猫校园强制使用微信登录的当下，该值恒为 `"Y"`。  
+`code` —— 响应状态。对于本请求，已知`0000`表示成功。  
