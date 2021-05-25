@@ -26,6 +26,7 @@ User-Agent: okhttp/3.12.0
    "password": ""
 }
 ```
-`Mac` —— 用户设备的 MAC 地址。
-`login_way` —— 未知，目前该值恒定为 5。
-`loginid` —— 用户微信的 openID。据微信开发者文档，对每个`应用开发者 ID` 而言， openID 与用户微信账号存在唯一对应关系。
+`Mac` —— 用户设备的 MAC 地址。  
+`login_way` —— 未知，目前该值恒定为 5。  
+`loginid` —— 用户微信的 openID。据微信开发者文档，对每个`应用开发者 ID` 而言， openID 与用户微信账号存在唯一对应关系。  
+`password` —— 用户密码。在使用微信登录的情况下，该值恒为空。  
