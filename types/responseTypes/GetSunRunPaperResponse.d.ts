@@ -1,4 +1,4 @@
-import RunPoint from "../runPoint";
+import RunPoint from "../RunPoint";
 import BaseResponse from "./BaseResponse";
 
 export default interface GetSunRunPaperResponse extends BaseResponse {

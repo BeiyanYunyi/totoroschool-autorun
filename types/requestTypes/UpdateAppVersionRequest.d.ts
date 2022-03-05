@@ -1,6 +1,6 @@
 export default interface UpdateAppVersionRequest {
   campusId: string;
-  deviceType: "1";
+  deviceType: string;
   schoolId: string;
   stuNo: string;
   token: string;

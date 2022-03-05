@@ -1,7 +1,11 @@
+/* eslint-disable import/no-cycle */
+import { Term } from "./GetSchoolTermResponse";
+import { Score } from "./GetSunRunArchResponse";
+
 export default interface BaseResponse {
   status: string;
   msg: null;
-  data: null;
+  data: null | Term[] | Score[];
   obj: null;
   body: null;
   obj1: null;
@@ -9,7 +13,7 @@ export default interface BaseResponse {
   total: number;
   wxLoginStatus: number;
   msgList: unknown[];
-  message: null;
+  message: null | string;
   code: string;
   token: null | string;
 }

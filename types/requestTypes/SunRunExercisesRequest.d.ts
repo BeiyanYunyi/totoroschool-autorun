@@ -1,19 +1,19 @@
 export default interface SunRunExercisesRequest {
+  LocalSubmitReason: string;
   avgSpeed: string;
   baseStation: string;
   consume: string;
   endTime: string;
+  evaluateDate: string;
   fitDegree: string;
   flag: string;
-  headImage: string | "";
+  headImage: string;
+  ifLocalSubmit: string;
   km: string;
   mac: string;
   phoneInfo: string;
   phoneNumber: string;
-  pointList: {
-    latitude: string;
-    longitude: string;
-  }[];
+  pointList: never[];
   routeId: string;
   runType: string;
   schoolId: string;
@@ -28,5 +28,5 @@ export default interface SunRunExercisesRequest {
   uuid: string;
   version: string;
   warnFlag: string;
-  warnType: string | "";
+  warnType: string;
 }
