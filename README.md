@@ -5,7 +5,7 @@
 ## 文件结构
 
 /source（已删除） ---- 通过 apktool、dex2jar 与 jd-gui 逆向工程得到的结果。需要者可以自取。  
-/statistic.md ---- 通过httpcanary抓取到的蒲公英统计数据原文。
+/statistic.md ---- 通过httpcanary抓取到的蒲公英统计数据原文。  
 /types ---- 针对龙猫服务器抓包后解密得到的类型定义，解密方法请自行探索。
 
 ## 工程日志 / 已知发现
