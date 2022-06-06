@@ -1,0 +1,14 @@
+proxies:
+  - name: "dummy"
+    type: socks5
+    server: 192.168.1.1
+    port: 443
+proxy-groups:
+  - name: 全部流量
+    type: select
+    proxies:
+      - DIRECT
+rules:
+  - MATCH,全部流量
+hosts:
+  "app.xtotoro.com": "129.211.209.224"

@@ -1,0 +1,12 @@
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+node_modules
+config/*
+!config/userConfig.example.json
+.directory
+build

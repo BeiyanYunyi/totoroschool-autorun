@@ -1,0 +1,53 @@
+{
+  "name": "fk-totoro-exp",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "YaJuSenPai",
+  "license": "AGPL-3.0-or-later",
+  "packageManager": "yarn@3.2.0",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "cli-progress": "^3.9.1",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.24.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "md5": "^2.3.0",
+    "minimist": "^1.2.5",
+    "node-rsa": "^1.1.1",
+    "prompts": "^2.4.1",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "build": "yarn tsc"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3",
+    "@types/cors": "^2",
+    "@types/eslint": "^7",
+    "@types/express": "^4.17.13",
+    "@types/md5": "^2",
+    "@types/minimist": "^1",
+    "@types/node": "^16.10.1",
+    "@types/node-rsa": "^1.1.1",
+    "@types/prettier": "^2",
+    "@types/prompts": "^2",
+    "@types/uuid": "^8",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
