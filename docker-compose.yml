@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  "totoroschool-autorun":
+    image: ghcr.io/lixiang810/totoroschool-autorun
+    container_name: totoroschool-autorun
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 443:443
+    volumes:
+      - ./config:/usr/src/app/config
