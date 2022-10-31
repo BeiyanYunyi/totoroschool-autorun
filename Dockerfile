@@ -6,9 +6,12 @@ WORKDIR /usr/src/app
 # 将依赖定义文件拷贝到工作目录下
 COPY ["package.json", "yarn.lock", "./"]
 # 以 production 形式安装依赖
-RUN corepack enable && yarn
+RUN corepack enable && yarn && mkdir certs
 # 将本地代码复制到工作目录内
-COPY . .
+COPY ["src", "tsconfig.json", "./"]
+RUN yarn build && rm -rf ~/.yarn ./src
+COPY ["src/data/certs", "./certs"]
+ENV CONTAINER=true
 EXPOSE 443
 # 启动服务
-CMD [ "yarn", "start", "--", "-s" ]
+CMD [ "yarn", "start", "-s" ]

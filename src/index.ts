@@ -6,16 +6,20 @@ import app from "./app";
 import argv from "./utils/argv";
 
 let server: http.Server | https.Server;
-if (argv.server) {
+if (!process.env.HTTPS) {
   server = http.createServer(app);
 } else {
-  const key = fs.readFileSync("./src/data/certs/priv.key");
-  const cert = fs.readFileSync("./src/data/certs/pub.crt");
+  const key = fs.readFileSync(
+    process.env.CONTAINER ? "./certs/priv.key" : "./src/data/certs/priv.key"
+  );
+  const cert = fs.readFileSync(
+    process.env.CONTAINER ? "./certs/pub.crt" : "./src/data/certs/pub.crt"
+  );
   server = https.createServer({ key, cert }, app);
 }
 server.listen(
-  argv.server ? 11451 : 443,
-  argv.server ? "127.0.0.1" : "0.0.0.0",
+  process.env.HTTPS ? 443 : 11451,
+  argv.host || "0.0.0.0",
   undefined,
   () => {
     if (argv.mac) {

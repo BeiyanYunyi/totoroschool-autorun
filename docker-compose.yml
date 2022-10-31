@@ -4,6 +4,8 @@ services:
   "totoroschool-autorun":
     image: ghcr.io/lixiang810/totoroschool-autorun
     container_name: totoroschool-autorun
+    environment:
+      - HTTPS=true
     build:
       context: .
       dockerfile: ./Dockerfile
